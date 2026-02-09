@@ -1,93 +1,171 @@
-# ResumeCraftAI - ATS Resume Builder & Analyzer
+# ResumeCraftAI 🚀  
+### AI-Powered ATS Resume Builder & Analyzer
 
-A modern, AI-powered resume builder and analyzer that helps you create professional, ATS-optimized resumes in minutes.
+ResumeCraftAI is a modern, AI-powered web application that helps job seekers create **professional, ATS-friendly resumes** in minutes. It analyzes resumes using intelligent logic, provides actionable feedback, and helps improve the chances of getting shortlisted by Applicant Tracking Systems (ATS).
 
-## Project info
+---
 
-**URL**: http://localhost:8080
+## 🌐 Live Demo
 
-## Features
+- **Live Website:** https://www.resumescraftai.tech/  
+- **Local Development URL:** http://localhost:8080  
 
-- 🚀 **AI-Powered Analysis**: Get detailed feedback on your resume's ATS compatibility
-- 📝 **Multiple Templates**: Choose from 10+ professional resume templates
-- 🎯 **ATS Optimization**: Built-in optimization for Applicant Tracking Systems
-- 💾 **Cloud Storage**: Save and access your resumes anywhere with Supabase
-- 📊 **Resume Scoring**: Get instant scores and improvement suggestions
-- 🔍 **Content Parser**: Extract and analyze content from existing resumes
+---
 
-## How can I edit this code?
+## ✨ Features
 
-There are several ways of editing your application.
+### 🚀 AI-Powered Resume Analysis
+- Intelligent analysis of resume content
+- ATS compatibility checks
+- Keyword and formatting suggestions
 
-**Use your preferred IDE**
+### 📝 Multiple Professional Templates
+- 10+ modern, ATS-optimized resume templates
+- Clean layouts suitable for recruiters
+- Easy customization
 
-If you want to work locally using your own IDE, you can clone this repo and make changes.
+### 🎯 ATS Optimization
+- Designed to pass Applicant Tracking Systems
+- Avoids common ATS parsing issues
+- Optimized structure and formatting
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 📊 Resume Scoring
+- Instant resume score
+- Section-wise feedback
+- Clear improvement recommendations
 
-Follow these steps:
+### 🔍 Resume Parser
+- Upload an existing resume
+- Automatically extract and analyze content
+- Convert old resumes into editable versions
+
+### 💾 Cloud Storage
+- Secure authentication using Supabase
+- Save and manage resumes in the cloud
+- Access resumes from anywhere
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React (with TypeScript)
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Radix UI
+
+### Backend & Services
+- Supabase (Authentication, Database, Storage)
+- React Query (Data fetching & caching)
+
+---
+
+## 📁 Project Structure
+
+```
+ResumeCraftAI/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
+│   └── main.tsx
+├── public/
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started (Local Setup)
+
+### Prerequisites
+Ensure you have:
+- Node.js (v18 or above)
+- npm or yarn
+
+> Recommended installation via nvm  
+> https://github.com/nvm-sh/nvm
+
+---
+
+### 🚀 Installation Steps
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project folder
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will start with hot reloading enabled.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🚀 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+You can deploy ResumeCraftAI using:
 
-## What technologies are used for this project?
+- **Vercel** (Recommended)
+- Netlify
+- AWS Amplify
+- Docker
 
-This project is built with:
+> Make sure to configure **Supabase environment variables** before deployment.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-- Supabase (Backend, Auth, Storage)
-- React Query
-- Radix UI
+---
 
-## How can I deploy this project?
+## 🌍 Custom Domain Support
 
-You can deploy this project using various platforms:
+Custom domains like `.tech` or `.me` can be easily connected using:
+- Vercel Domain Settings
+- Netlify DNS
+- Namecheap / GoDaddy
 
-- **Vercel**: Connect your GitHub repository and deploy
-- **Netlify**: Drag and drop the build folder or connect Git
-- **AWS Amplify**: Connect your repository for automatic deployment
-- **Docker**: Use the provided Dockerfile for containerized deployment
+---
 
-## Can I connect a custom domain?
+## 🤝 Contributing
 
-Yes, you can! Most deployment platforms support custom domains. Check your platform's documentation for specific instructions on connecting a custom domain.
-
-## Contributing
+Contributions are welcome!
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
+3. Make changes
 4. Test thoroughly
 5. Submit a pull request
 
-## License
+---
 
+## 🚧 Future Enhancements
+
+- AI resume tailoring for specific job descriptions
+- Cover letter generator
+- Resume download in PDF/DOCX
+- Multi-language support
+- Recruiter review mode
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.  
+You are free to use, modify, and distribute it.
+
+---
+
+## 👨‍💻 Author
+
+**Vaishno Tiwari**  
+Full Stack Developer (MERN)  
+Live Project: https://www.resumescraftai.tech/
