@@ -27,6 +27,7 @@ import Pricing from "./pages/Pricing";
 import Analyzer from "./pages/Analyzer";
 import ResetPassword from "./pages/ResetPassword";
 import NotFound from "./pages/NotFound";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 /** Shared query client — keeps cached data across page navigations */
 const queryClient = new QueryClient();
@@ -40,12 +41,12 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/builder" element={<Builder />} />
+              <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+              <Route path="/builder" element={<ProtectedRoute><Builder /></ProtectedRoute>} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/analyzer" element={<Analyzer />} />
+              <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="/pricing" element={<ProtectedRoute><Pricing /></ProtectedRoute>} />
+              <Route path="/analyzer" element={<ProtectedRoute><Analyzer /></ProtectedRoute>} />
               <Route path="/reset-password" element={<ResetPassword />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
