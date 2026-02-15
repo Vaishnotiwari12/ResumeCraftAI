@@ -61,8 +61,10 @@ Deno.serve(async (req) => {
     }
 
     const lovableApiKey = Deno.env.get("LOVABLE_API_KEY");
-    if (!lovableApiKey) {
-      throw new Error("LOVABLE_API_KEY is not configured");
+    const geminiApiKey = Deno.env.get("GEMINI_API_KEY");
+
+    if (!lovableApiKey && !geminiApiKey) {
+      throw new Error("Neither LOVABLE_API_KEY nor GEMINI_API_KEY is configured");
     }
 
     /* ---- Build the appropriate prompt ---- */
@@ -133,19 +135,48 @@ Respond with ONLY the improved text, maintaining the same format as the original
         );
     }
 
-    /* ---- Call the AI gateway ---- */
-    const aiResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${lovableApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-3-flash-preview",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.7,
-      }),
-    });
+    /* ---- Call the AI gateway or Gemini directly ---- */
+    let aiResponse;
+    let generatedContent;
+
+    if (lovableApiKey) {
+      // Use Lovable's AI Gateway
+      aiResponse = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${lovableApiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "google/gemini-3-flash-preview",
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.7,
+        }),
+      });
+    } else if (geminiApiKey) {
+      // Use Google Gemini API directly
+      aiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: prompt
+            }]
+          }],
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 2048,
+          }
+        }),
+      });
+    }
+
+    if (!aiResponse) {
+      throw new Error("No AI API configured");
+    }
 
     if (!aiResponse.ok) {
       if (aiResponse.status === 429) {
@@ -161,12 +192,17 @@ Respond with ONLY the improved text, maintaining the same format as the original
         );
       }
       const errorText = await aiResponse.text();
-      console.error("AI Gateway error:", errorText);
+      console.error("AI API error:", errorText);
       throw new Error("Failed to generate content");
     }
 
     const aiData = await aiResponse.json();
-    const generatedContent = aiData.choices[0]?.message?.content?.trim();
+
+    if (lovableApiKey) {
+      generatedContent = aiData.choices[0]?.message?.content?.trim();
+    } else if (geminiApiKey) {
+      generatedContent = aiData.candidates[0]?.content?.parts[0]?.text?.trim();
+    }
 
     if (!generatedContent) {
       throw new Error("No content generated");
