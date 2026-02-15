@@ -26,8 +26,8 @@ import Dashboard from "./pages/Dashboard";
 import Pricing from "./pages/Pricing";
 import Analyzer from "./pages/Analyzer";
 import ResetPassword from "./pages/ResetPassword";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy"; // Privacy Policy page
+import TermsOfService from "./pages/TermsOfService"; // Terms of Service page
 import NotFound from "./pages/NotFound";
 
 /** Shared query client — keeps cached data across page navigations */
