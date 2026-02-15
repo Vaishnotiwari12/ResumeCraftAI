@@ -207,8 +207,7 @@ const TemplatesShowcase = () => {
         >
           {/* Duplicate templates for seamless looping */}
           {[...filteredTemplates, ...filteredTemplates].map((template, idx) => (
-            <Link
-              to="/builder"
+            <div
               key={`${template.id}-${idx}`}
               className={cn(
                 "group relative flex-shrink-0 rounded-2xl border overflow-hidden transition-all duration-500 hover:-translate-y-2",
@@ -252,27 +251,29 @@ const TemplatesShowcase = () => {
               </div>
 
               {/* Template info */}
-              <div className="p-4 border-t border-border/30 bg-card/80 backdrop-blur-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">
-                      {template.name}
-                    </p>
-                    {template.isFeatured && (
-                      <div className="flex items-center gap-1 mt-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3 w-3 fill-primary/70 text-primary/70" />
-                        ))}
-                        <span className="text-[10px] text-muted-foreground ml-1">50K+ users</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <ArrowRight className="h-4 w-4" />
+              <Link to="/builder">
+                <div className="p-4 border-t border-border/30 bg-card/80 backdrop-blur-sm">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">
+                        {template.name}
+                      </p>
+                      {template.isFeatured && (
+                        <div className="flex items-center gap-1 mt-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-primary/70 text-primary/70" />
+                          ))}
+                          <span className="text-[10px] text-muted-foreground ml-1">50K+ users</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
 
