@@ -30,7 +30,7 @@ interface Profile {
 }
 
 /** Public API exposed through the context */
-interface AuthContextType {
+export interface AuthContextType {
   user: User | null;
   session: Session | null;
   profile: Profile | null;
@@ -43,6 +43,7 @@ interface AuthContextType {
   refreshProfile: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error: Error | null }>;
   updatePassword: (newPassword: string) => Promise<{ error: Error | null }>;
+  signInWithGoogle: () => Promise<{ error: Error | null }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -152,6 +153,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return { error };
   };
 
+  const signInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin,
+      },
+    });
+    return { error };
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -165,6 +176,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         refreshProfile,
         resetPassword,
         updatePassword,
+        signInWithGoogle,
       }}
     >
       {children}
