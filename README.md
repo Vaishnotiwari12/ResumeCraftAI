@@ -21,6 +21,18 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 ### 📊 Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
+### 🔍 Resume Analyzer
+![Resume Analyzer](screenshots/resume-analyzer.png)
+
+### 📈 Analyzer
+![Analyzer](screenshots/analyzer.png)
+
+### 🛠️ Builder
+![Builder](screenshots/builder.png)
+
+### 📝 Template
+![Template](screenshots/template.png)
+
 ### 🔍 ATS Check
 ![ATS Check](screenshots/ats-check.png)
 
@@ -131,6 +143,10 @@ ResumeCraftAI/
 ├── screenshots/
 │   ├── signin-home.png
 │   ├── dashboard.png
+│   ├── resume-analyzer.png
+│   ├── analyzer.png
+│   ├── builder.png
+│   ├── template.png
 │   ├── ats-check.png
 │   └── ats-results.png
 ├── package.json
