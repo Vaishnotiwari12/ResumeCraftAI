@@ -19,10 +19,10 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 ![Sign In Page](screenshots/signin-home.png)
 
 ### 📊 Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](https://github.com/Vaishnotiwari12/ResumeCraftAI/issues/1#issue-1)
 
 ### 🔍 Resume Analyzer
-![Resume Analyzer](screenshots/resume-analyzer.png)
+![Resume Analyzer](https://github.com/Vaishnotiwari12/ResumeCraftAI/issues/2#issue-2)
 
 ### 📈 Analyzer
 ![Analyzer](screenshots/analyzer.png)
@@ -34,7 +34,7 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 ![Template](screenshots/template.png)
 
 ### 🔍 ATS Check
-![ATS Check](screenshots/ats-check.png)
+![ATS Check](https://github.com/Vaishnotiwari12/ResumeCraftAI/issues/3#issue-3)
 
 ### 📈 ATS Results
 ![ATS Results](screenshots/ats-results.png)
