@@ -7,7 +7,8 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 
 ## 🌐 Live Demo
 
-- **Live Website:** https://www.resumescraftai.tech/  
+- **Live Website:** https://resume-craft-ai-alpha.vercel.app/  
+- **Custom Domain:** https://www.resumescraftai.tech/ (in progress)
 - **Local Development URL:** http://localhost:8080  
 
 ---
@@ -49,15 +50,34 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 ## 🛠️ Tech Stack
 
 ### Frontend
-- React (with TypeScript)
-- Vite
-- Tailwind CSS
-- shadcn/ui
-- Radix UI
+- **React 18** with TypeScript
+- **Vite** (build tool)
+- **Tailwind CSS** + shadcn/ui
+- **React Router DOM**
+- **React Hook Form** + Zod
+- **Framer Motion** (animations)
+- **Recharts** (charts)
+- **react-to-print** (PDF export)
+- **@dnd-kit** (drag & drop)
 
-### Backend & Services
-- Supabase (Authentication, Database, Storage)
-- React Query (Data fetching & caching)
+### Backend
+- **PostgreSQL** (database)
+- **Supabase Edge Functions** (Deno runtime)
+- **Row Level Security** (RLS)
+- **File Storage** (Supabase Storage)
+
+### AI
+- **Google Gemini 2.5 Flash** (resume parsing)
+- **Google Gemini 3 Flash Preview** (content generation & ATS analysis)
+
+### Authentication
+- **Email/Password** (Supabase Auth)
+- **Google OAuth 2.0**
+- **Password Reset** functionality
+
+### Deployment
+- **Vercel** (hosting)
+- **Domain:** resumescraftai.tech (.tech TLD)
 
 ---
 
@@ -67,12 +87,31 @@ ResumeCraftAI is a modern, AI-powered web application that helps job seekers cre
 ResumeCraftAI/
 ├── src/
 │   ├── components/
+│   │   ├── ui/           # shadcn/ui components
+│   │   ├── resume/       # Resume-related components
+│   │   └── landing/      # Landing page sections
 │   ├── pages/
+│   │   ├── Index.tsx     # Landing page
+│   │   ├── Auth.tsx      # Authentication
+│   │   ├── Dashboard.tsx # Main dashboard
+│   │   ├── Builder.tsx   # Resume builder
+│   │   ├── Analyzer.tsx  # Resume analyzer
+│   │   ├── Pricing.tsx   # Pricing page
+│   │   ├── PrivacyPolicy.tsx
+│   │   └── TermsOfService.tsx
+│   ├── contexts/
+│   │   └── AuthContext.tsx
 │   ├── hooks/
 │   ├── services/
 │   ├── utils/
-│   └── main.tsx
+│   └── App.tsx
+├── supabase/
+│   └── functions/
+│       └── generate-content/  # AI generation edge function
 ├── public/
+│   ├── favicon.svg
+│   ├── robots.txt
+│   └── google-site-verification.html
 ├── package.json
 ├── tailwind.config.js
 ├── tsconfig.json
@@ -97,10 +136,10 @@ Ensure you have:
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/Vaishnotiwari12/ResumeCraftAI.git
 
 # Navigate to project folder
-cd <YOUR_PROJECT_NAME>
+cd ResumeCraftAI
 
 # Install dependencies
 npm install
@@ -115,23 +154,49 @@ The application will start with hot reloading enabled.
 
 ## 🚀 Deployment
 
-You can deploy ResumeCraftAI using:
-
-- **Vercel** (Recommended)
-- Netlify
-- AWS Amplify
-- Docker
+### Vercel Deployment
+- **Primary Hosting:** Vercel
+- **Custom Domain:** resumescraftai.tech
+- **Environment Variables:** Supabase configuration
 
 > Make sure to configure **Supabase environment variables** before deployment.
 
 ---
 
-## 🌍 Custom Domain Support
+## 🌍 Custom Domain Setup
 
-Custom domains like `.tech` or `.me` can be easily connected using:
-- Vercel Domain Settings
-- Netlify DNS
-- Namecheap / GoDaddy
+### Domain: resumescraftai.tech (.tech TLD)
+- **Registrar:** get.tech
+- **DNS Provider:** Namecheap
+- **Status:** Configuration in progress
+
+### DNS Configuration
+- **A Records:** Pointing to Vercel servers
+- **CNAME:** www subdomain configuration
+- **TXT Records:** Google Search Console verification
+
+---
+
+## 🔐 Authentication & Security
+
+### Google OAuth 2.0
+- **Status:** Submitted for verification
+- **Scopes:** email, profile, openid
+- **Consent Screen:** ResumeCraftAI branding
+
+### Email Services
+- **Password Reset:** SendGrid SMTP
+- **Domain Authentication:** Configured for resumescraftai.tech
+
+---
+
+## 📱 Connect With Me
+
+### Social Links
+- **LinkedIn:** [linkedin.com/in/vaishnotiwari](https://linkedin.com/in/vaishnotiwari)
+- **GitHub:** [github.com/Vaishnotiwari12](https://github.com/Vaishnotiwari12)
+- **Twitter:** [@vaishnotiwari12](https://twitter.com/vaishnotiwari12)
+- **Email:** vaishnotiwari12@gmail.com
 
 ---
 
@@ -154,6 +219,7 @@ Contributions are welcome!
 - Resume download in PDF/DOCX
 - Multi-language support
 - Recruiter review mode
+- Custom domain full integration
 
 ---
 
@@ -167,5 +233,11 @@ You are free to use, modify, and distribute it.
 ## 👨‍💻 Author
 
 **Vaishno Tiwari**  
-Full Stack Developer (MERN)  
-Live Project: https://www.resumescraftai.tech/
+Full Stack Developer  
+Live Project: https://resume-craft-ai-alpha.vercel.app/
+
+### Let's Connect!
+- 📧 vaishnotiwari12@gmail.com
+- 💼 [LinkedIn](https://linkedin.com/in/vaishnotiwari)
+- 🐙 [GitHub](https://github.com/Vaishnotiwari12)
+- 🐦 [Twitter](https://twitter.com/vaishnotiwari12)
