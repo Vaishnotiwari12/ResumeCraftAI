@@ -17,7 +17,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+import { ThemeProvider } from "next-themes";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import React from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
 import Builder from "./pages/Builder";
 import Auth from "./pages/Auth";
@@ -33,10 +37,12 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <Helmet>
-    <meta name="google-site-verification" content="Ms_-THl9Ds2tw0ydvoWgeNLmYeKd-SUElokR1Q6pfRE" />
-  </Helmet>
-  <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+  <HelmetProvider>
+    <div>
+      <Helmet>
+        <meta name="google-site-verification" content="Ms_-THl9Ds2tw0ydvoWgeNLmYeKd-SUElokR1Q6pfRE" />
+      </Helmet>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <TooltipProvider>
@@ -79,7 +85,9 @@ const App = () => (
         </TooltipProvider>
       </AuthProvider>
     </QueryClientProvider>
-  </ThemeProvider>
+    </ThemeProvider>
+      </div>
+    </HelmetProvider>
 );
 
 export default App;
