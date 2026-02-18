@@ -190,16 +190,6 @@ The application will start with hot reloading enabled.
 
 ---
 
-## 📱 Connect With Me
-
-### Social Links
-- **LinkedIn:** [linkedin.com/in/vaishnotiwari](https://linkedin.com/in/vaishnotiwari)
-- **GitHub:** [github.com/Vaishnotiwari12](https://github.com/Vaishnotiwari12)
-- **Twitter:** [@vaishnotiwari12](https://twitter.com/vaishnotiwari12)
-- **Email:** vaishnotiwari12@gmail.com
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -232,8 +222,9 @@ You are free to use, modify, and distribute it.
 
 ## 👨‍💻 Author
 
+<center>
 **Vaishno Tiwari**  
-Full Stack Developer  
+Full Stack Developer (MERN)  
 Live Project: https://resume-craft-ai-alpha.vercel.app/
 
 ### Let's Connect!
@@ -241,3 +232,4 @@ Live Project: https://resume-craft-ai-alpha.vercel.app/
 - 💼 [LinkedIn](https://linkedin.com/in/vaishnotiwari)
 - 🐙 [GitHub](https://github.com/Vaishnotiwari12)
 - 🐦 [Twitter](https://twitter.com/vaishnotiwari12)
+</center>
