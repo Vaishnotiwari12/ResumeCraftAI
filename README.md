@@ -220,6 +220,9 @@ The application will start with hot reloading enabled.
 - **Status:** Submitted for verification
 - **Scopes:** email, profile, openid
 - **Consent Screen:** ResumeCraftAI branding
+- **Homepage URL:** https://resume-craft-ai-alpha.vercel.app/
+- **Privacy Policy URL:** https://resume-craft-ai-alpha.vercel.app/privacy.html
+- **Terms of Service URL:** https://resume-craft-ai-alpha.vercel.app/terms.html
 
 ### Email Services
 - **Password Reset:** SendGrid SMTP
